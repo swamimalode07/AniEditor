@@ -74,3 +74,8 @@
 .hover\:animate-glow:hover {
   animation: glow 1.5s ease-in-out infinite alternate; /* Glowing effect */
 }
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

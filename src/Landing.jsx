@@ -8,6 +8,7 @@ export default function Landing() {
   const images = [
     "./overlays/overlay1.png",
     "./overlays/overlay2.png",
+    "./overlays/overlay3.png"
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
@@ -76,12 +77,15 @@ export default function Landing() {
         </div>
       </motion.section>
 
+
+  
+
       {/* Features Section */}
       <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Choose Us?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Choose AniEditor?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Feature 1 */}
+      
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -93,7 +97,6 @@ export default function Landing() {
               <p className="text-gray-400 mt-2">Crisp, detailed overlays that enhance your images instantly.</p>
             </motion.div>
 
-            {/* Feature 2 */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -106,7 +109,6 @@ export default function Landing() {
               <p className="text-gray-400 mt-2">No complex tools—just upload, overlay, and save.</p>
             </motion.div>
 
-            {/* Feature 3 */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
