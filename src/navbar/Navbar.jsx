@@ -10,17 +10,28 @@ export default function Navbar() {
     <nav className="bg-gradient-to-r bg-black shadow-lg p-4 text-white font-mono">
       <div className="container mx-auto flex justify-between items-center">
         <Link to={"/"}>
-        <h1 className="text-2xl font-extrabold tracking-widest">AniEditor</h1>
+          <h1 className="text-2xl font-extrabold tracking-widest">AniEditor</h1>
         </Link>
         <div className="hidden md:flex space-x-6 text-lg">
-          <a href="/" className="hover:text-yellow-300 transition duration-300">Home</a>
-          <a href="/overlay" className="hover:text-yellow-300 transition duration-300">Editor</a>
-          <a href="https://swamimalode.online" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition duration-300">
-  Contact
-</a>
-
+          <Link to="/" className="hover:text-yellow-300 transition duration-300">Home</Link>
+          <Link to="/overlay" className="hover:text-yellow-300 transition duration-300">Editor</Link>
+          <a 
+            href="https://swamimalode.online" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-yellow-300 transition duration-300"
+          >
+            Contact
+          </a>
         </div>
-        <button className="hidden md:block bg-yellow-400 text-gray-900 px-5 py-2 rounded-full shadow-md hover:bg-yellow-300 transition duration-300">Star on Github</button>
+        <a 
+          href="https://github.com/swamimalode07/AniEditor" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="hidden md:block bg-yellow-400 text-gray-900 px-5 py-2 rounded-full shadow-md hover:bg-yellow-300 transition duration-300"
+        >
+          Star on GitHub
+        </a>
         <button
           className="md:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
@@ -37,10 +48,24 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="md:hidden flex flex-col items-center space-y-4 mt-4 text-lg"
           >
-            <a href="#" className="hover:text-yellow-300 transition duration-300">Home</a>
-            <a href="#" className="hover:text-yellow-300 transition duration-300">Editor</a>   
-            <a href="#" className="hover:text-yellow-300 transition duration-300">Contact</a>
-            <button className="bg-yellow-400 text-gray-900 px-5 py-2 rounded-full shadow-md hover:bg-yellow-300 transition duration-300">Star on github</button>
+            <Link to="/" className="hover:text-yellow-300 transition duration-300">Home</Link>
+            <Link to="/overlay" className="hover:text-yellow-300 transition duration-300">Editor</Link>
+            <a 
+              href="https://swamimalode.online" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-yellow-300 transition duration-300"
+            >
+              Contact
+            </a>
+            <a 
+              href="https://github.com/swamimalode07/AniEditor" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-yellow-400 text-gray-900 px-5 py-2 rounded-full shadow-md hover:bg-yellow-300 transition duration-300"
+            >
+              Star on GitHub
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
