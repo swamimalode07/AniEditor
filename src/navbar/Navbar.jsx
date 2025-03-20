@@ -13,7 +13,7 @@ export default function Navbar() {
         <h1 className="text-2xl font-extrabold tracking-widest">AniEditor</h1>
         </Link>
         <div className="hidden md:flex space-x-6 text-lg">
-          <a href="#" className="hover:text-yellow-300 transition duration-300">Home</a>
+          <a href="/" className="hover:text-yellow-300 transition duration-300">Home</a>
           <a href="/overlay" className="hover:text-yellow-300 transition duration-300">Editor</a>
           <a href="https://swamimalode.online" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition duration-300">
   Contact

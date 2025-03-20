@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Image, Zap } from "lucide-react";
 import Navbar from "../src/navbar/Navbar";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Landing() {
+  const navigate = useNavigate();
   const images = [
     "./overlays/overlay1.png",
     "./overlays/overlay2.png",
-    "./overlays/overlay3.png"
+    "./overlays/overlay3.png",
+    "./overlays/animegirl3.png"
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
@@ -21,10 +25,10 @@ export default function Landing() {
 
   return (
     <>
-      {/* Navbar */}
+    
       <Navbar />
 
-      {/* Hero Section */}
+   
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -34,7 +38,7 @@ export default function Landing() {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-transparent"></div>
 
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 relative z-10 w-full">
-          {/* Left Side - Text Content */}
+    
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -49,6 +53,7 @@ export default function Landing() {
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
               <motion.button
+                onClick={() => navigate("/overlay")}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="bg-yellow-300 text-black px-5 md:px-6 py-2 md:py-3 rounded-2xl font-semibold shadow-md hover:bg-yellow-400 transition-transform transform"
@@ -58,7 +63,6 @@ export default function Landing() {
             </div>
           </motion.div>
 
-          {/* Right Side - Rotating Image */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -81,7 +85,6 @@ export default function Landing() {
         </div>
       </motion.section>
 
-      {/* Features Section */}
       <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Choose AniEditor?</h2>
@@ -122,7 +125,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-6 bg-black text-gray-400 text-center">
         <p>&copy; {new Date().getFullYear()} Anime Overlay. All rights reserved.</p>
       </footer>

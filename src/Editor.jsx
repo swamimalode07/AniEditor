@@ -25,7 +25,36 @@ function Editor() {
     "/overlays/overlay1.png",
     "/overlays/overlay2.png",
     "/overlays/overlay3.png",
-  
+    "/overlays/naruto.png",
+     "/overlays/character.webp",
+     "/overlays/cute.png",
+     "/overlays/girlpink.png",
+     "/overlays/onepiece2.png",
+     "/overlays/animegirl.png",
+     "/overlays/animechar.png",
+     "/overlays/onepiece.png",
+     "/overlays/animeboy.png",
+     "/overlays/chika.png",
+     "/overlays/cute.png",
+    
+    "/overlays/anime.webp",
+    "/overlays/onepunchman3.webp",
+    "/overlays/onepiece.webp",
+    "/overlays/tanjiro.webp",
+    "/overlays/onepunchman2.webp",
+    "/overlays/naruto3.webp",
+    "/overlays/ash.webp",
+    "/overlays/naruto2.webp",
+    "/overlays/goku3.webp",
+    "/overlays/naruto1.webp",
+    "/overlays/goku2.webp",
+   
+    "/overlays/animegirl4.png",
+    "/overlays/naruto4.png",
+    "/overlays/naruto5.png",
+    "/overlays/girlpink.png",
+   
+    "/overlays/animegirl2.png",
     
   ];
 
@@ -411,7 +440,7 @@ function Editor() {
                   <div className="relative mb-4">
                     <input
                       type="text"
-                      placeholder="Search overlays..."
+                      placeholder="Search by Anime names..."
                       value={overlaySearchTerm}
                       onChange={(e) => setOverlaySearchTerm(e.target.value)}
                       className="w-full bg-gray-800 text-white rounded-md py-2 px-3 text-sm border border-gray-700 focus:outline-none focus:border-yellow-500 pl-9"
@@ -666,7 +695,7 @@ function Editor() {
           </div>
         </div>
       </div>
-    </>
+    </> 
   );
 }
 

@@ -56,7 +56,7 @@
   to { transform: rotate(360deg); }
 }
 .animate-spin-slow {
-  animation: spin-slow 10s linear infinite; /* Slow spin */
+  animation: spin-slow 10s linear infinite; 
 }
 
 @keyframes float {
@@ -64,7 +64,7 @@
   50% { transform: translateY(-15px); }
 }
 .animate-float {
-  animation: float 4s ease-in-out infinite; /* Floating effect */
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes glow {
@@ -72,7 +72,7 @@
   50% { filter: drop-shadow(0 0 20px #ffcc00); }
 }
 .hover\:animate-glow:hover {
-  animation: glow 1.5s ease-in-out infinite alternate; /* Glowing effect */
+  animation: glow 1.5s ease-in-out infinite alternate; 
 }
 
 
