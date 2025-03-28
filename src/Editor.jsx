@@ -285,8 +285,10 @@ function Editor() {
   const filteredOverlays = overlays.filter(src => 
     src.toLowerCase().includes(overlaySearchTerm.toLowerCase())
   );
+  
 
   return (
+    
     <>
    
       <div className="bg-black text-white min-h-screen flex flex-col">
@@ -325,59 +327,75 @@ function Editor() {
         </div>
 
         <div className="flex flex-1 max-h-[calc(100vh-115px)]"> 
-          <div className="w-3/5 p-4 flex flex-col">
-            <div 
-              ref={imageRef}
-              className="flex-1 bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center overflow-hidden relative"
-            >
-              {image ? (
-                <img 
-                  src={image} 
-                  alt="Uploaded" 
-                  className="absolute w-full h-full object-contain z-10"
-                  style={{ filter: imageFilter !== 'none' ? `${imageFilter}(${
-                    imageFilter === 'blur' ? '4px' : 
-                    imageFilter === 'brightness' ? '130%' : 
-                    imageFilter === 'contrast' ? '150%' : '1'
-                  })` : 'none' }}
-                />
-              ) : (
-                <div className="text-gray-500 flex flex-col items-center">
-                  <svg className="w-16 h-16 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  <p className="text-lg">Upload an image to get started</p>
-                </div>
-              )}
-              
-              {overlayItems.map((item) => (
-                <img
-                  key={item.id}
-                  src={item.src}
-                  alt="Overlay"
-                  className={`
-                    absolute object-contain cursor-grab z-20
-                    ${selectedOverlay === item.id ? 'ring-2 ring-yellow-500' : ''}
-                    ${animations[item.id] || ''}
-                  `}
-                  style={{
-                    width: `${item.size}px`,
-                    height: `${item.size}px`,
-                    left: `${item.position.x}px`,
-                    top: `${item.position.y}px`,
-                    opacity: overlayOpacity,
-                    transform: `
-                      rotate(${item.rotation || 0}deg)
-                      scaleX(${item.flipX ? -1 : 1})
-                      scaleY(${item.flipY ? -1 : 1})
-                    `,
-                    transformOrigin: 'center center',
-                  }}
-                  onMouseDown={(e) => handleMouseDown(e, item.id)}
-                />
-              ))}
-            </div>
-          </div>
+  <div className="w-3/5 p-4 flex flex-col">
+    <div 
+      ref={imageRef}
+      className="flex-1 bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center overflow-hidden relative"
+    >
+      {image ? (
+        <img 
+          src={image} 
+          alt="Uploaded" 
+          className="absolute w-full h-full object-contain z-10"
+          style={{ filter: imageFilter !== 'none' ? `${imageFilter}(${
+            imageFilter === 'blur' ? '4px' : 
+            imageFilter === 'brightness' ? '130%' : 
+            imageFilter === 'contrast' ? '150%' : '1'
+          })` : 'none' }}
+        />
+      ) : (
+        <div className="text-gray-500 flex flex-col items-center">
+          <svg className="w-16 h-16 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <p className="text-lg">Upload an image to get started</p>
+          <input 
+            type="file" 
+            id="imageUpload" 
+            accept="image/*" 
+            className="hidden" 
+            onChange={handleImageUpload} 
+          />
+          <button 
+            onClick={() => document.getElementById('imageUpload').click()} 
+            className="mt-3 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+          >
+            Upload Image
+          </button>
+        </div>
+      )}
+
+      {overlayItems.map((item) => (
+        <img
+          key={item.id}
+          src={item.src}
+          alt="Overlay"
+          className={`
+            absolute object-contain cursor-grab z-20
+            ${selectedOverlay === item.id ? 'ring-2 ring-yellow-500' : ''}
+            ${animations[item.id] || ''}
+          `}
+          style={{
+            width: `${item.size}px`,
+            height: `${item.size}px`,
+            left: `${item.position.x}px`,
+            top: `${item.position.y}px`,
+            opacity: overlayOpacity,
+            transform: `
+              rotate(${item.rotation || 0}deg)
+              scaleX(${item.flipX ? -1 : 1})
+              scaleY(${item.flipY ? -1 : 1})
+            `,
+            transformOrigin: 'center center',
+          }}
+          onMouseDown={(e) => handleMouseDown(e, item.id)}
+        />
+      ))}
+    </div>
+  </div>
+
+
+       
 
           <div className="w-2/5 bg-gray-950 flex flex-col">
             <div className="flex border-b border-gray-800 bg-gray-900">
