@@ -1,6 +1,6 @@
 # AniEditor
 
-AniEditor is a web-based tool that allows users to add anime-themed overlays to their uploaded images. Whether you're looking to enhance your photos with anime effects, character silhouettes, or stylish filters, AniEditor makes it easy and fun!
+AniEditor is a web-based tool that allows users to add anime-themed overlays to their uploaded images.
 
 ## Features
 
@@ -16,7 +16,7 @@ To run AniEditor locally, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/anieditor.git
+   git clone https://github.com/swamimalode07/anieditor.git
    cd anieditor
    npm install
    npm run dev
